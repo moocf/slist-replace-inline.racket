@@ -1,4 +1,4 @@
-Elimiate one call to subst-sexp in subst by replacing its definition (see EOPL).
+Elimiate one call to `*-sexp` by replacing its definition (see EOPL).
 
 **Course**: [Principles of Programming Languages], Monsoon 2019<br>
 **Taught by**: Prof. Venkatesh Chopella

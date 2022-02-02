@@ -1,8 +1,8 @@
 #lang racket
 
-;; subst: Symbol x Symbol x SList -> SList
-;; usage: (subst new old slist) = substitute symbol in a symbol list
-(define subst
+;; slist.replace-inline: Symbol x Symbol x SList -> SList
+;; usage: (slist.replace-inline new old slist) = substitute symbol in a symbol list
+(define slist.replace-inline
   (lambda (new old slist)
     (if (null? slist)
         '()
@@ -12,8 +12,8 @@
                (if (eqv? sexp old)
                    new
                    sexp)
-               (subst new old sexp)))
-         (subst new old (cdr slist))))))
+               (slist.replace-inline new old sexp)))
+         (slist.replace-inline new old (cdr slist))))))
 
 ; s-list ::= ({s-exp}*)
 ; s-exp  ::= symbol | s-list
